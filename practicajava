@@ -1,0 +1,55 @@
+package Practica2;
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Mass {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int[] mas = new int[4];
+        for (int a = 0; a < mas.length; a++) {
+            System.out.println("Введите числа массива");
+            mas[a] = in.nextInt();
+        }
+        int b = 0;
+        for (int a = 0; a < mas.length; a++) {
+            b = b + mas[a];
+        }
+        System.out.println("Сумма масива = " + b);
+
+        int max = mas[0];
+        int min = mas[0];
+        for (int a = 0; a < mas.length; a++) {
+            if (mas[a] < min)
+                min = mas[a];
+            if (mas[a] > max)
+                max = mas[a];
+        }
+        System.out.println("минимальный элемент массива " + min + "; максимальный элемент массива " + max);
+
+        double sum = 0;
+        double sr = 0;
+        for (int a = 0; a < mas.length; a++) {
+            sum = sum + mas[a];
+        }
+        sr = sum / mas.length;
+        System.out.println("Среднее арифметическое массива = " + sr);
+
+
+        Arrays.sort(mas);
+        System.out.println("Элементы по возрастанию ");
+        for(int a=0; a < mas.length; a++) {
+            System.out.println(mas[a]);
+        }
+
+
+        Arrays.sort(mas);
+        System.out.println("Элементы по убыванию");
+        int a = 0;
+        for ( a = mas.length - 1; a >= 0; a--) {
+            System.out.println(mas[a]);
+        }
+
+    }
+}
