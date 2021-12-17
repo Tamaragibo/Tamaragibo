@@ -1,0 +1,35 @@
+package com.company;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
+
+public class Main {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Мое первое окно"); //создаем окно
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(400, 350));
+
+        JPanel panel = new JPanel(); //задаем цвет окну
+        JPanel panel1 = new JPanel(); //цвет второго окна
+        JPanel general = new JPanel(); //создали общее окно
+        general.setBackground(Color.BLACK);
+        panel.setBackground(Color.RED);
+        panel.setBackground(Color.blue);
+
+        JLabel label = new JLabel("Привет, мир!"); //пишем в панеле
+        JLabel label1 = new JLabel("ГИБО, привет!");
+        panel.add(label);
+        panel1.add(label1);
+        panel.setPreferredSize(new Dimension(200,100)); // размер для 1 панели
+        panel1.setPreferredSize(new Dimension(200,100)); // для 2
+        general.add(panel);
+        general.add(panel1);
+
+
+        frame.getContentPane().add(general);
+
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+}
